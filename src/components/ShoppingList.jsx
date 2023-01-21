@@ -1,5 +1,6 @@
 import { plantList } from "../datas/plantList";
 import "../styles/shoppingList.css";
+import CareScale from "./CareScale";
 
 /*const categories = plantList.reduce((acc, currentValue) => {
   if (!acc.empty()) {
@@ -31,6 +32,8 @@ const plantsName = (
       <li key={plant.id} className="lmj-plant-item">
         {plant.name} {plant.isBestSale ? <span>🔥</span> : null}
         {plant.isSpecialOffer ? <div className="lmj-sales">Soldes</div> : null}
+        <CareScale careType="water" scaleValue={plant.water} />
+        <CareScale careType="light" scaleValue={plant.light} />
       </li>
     ))}
   </ul>
